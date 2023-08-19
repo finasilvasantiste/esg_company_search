@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  esg_fund_search:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DOCKER_IMAGE_NAME-esg-fund-search}
