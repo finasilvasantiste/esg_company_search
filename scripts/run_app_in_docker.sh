@@ -1,2 +1,2 @@
 docker-compose build
-docker-compose run esg_fund_search
+docker-compose run esg_company_search

@@ -1,4 +1,4 @@
-# esg_fund_search
+# esg_company_search
 
 # Project Setup
 
