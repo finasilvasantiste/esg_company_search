@@ -1,4 +1,4 @@
-# esg_company_search
+# ESG Company Search
 
 # Summary
 
@@ -8,7 +8,7 @@ Financial analysts want to understand how a company is performing ESG(Environmen
 ## Goal
 Stepwise approach to
 
-# Project Setup
+# App Setup
 
 ## Docker Setup *(recommended)*
 Make sure you have [Docker](https://www.docker.com/) installed.
