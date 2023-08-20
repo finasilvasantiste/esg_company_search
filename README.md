@@ -1,5 +1,13 @@
 # esg_company_search
 
+# Summary
+
+## Scenario/Use Case
+Financial analysts want to understand how a company is performing ESG(Environmental, Social, and Governance)-wise to help determine its potentials risks and opportunities.
+
+## Goal
+Stepwise approach to
+
 # Project Setup
 
 ## Docker Setup *(recommended)*
