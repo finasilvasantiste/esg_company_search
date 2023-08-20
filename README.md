@@ -6,13 +6,11 @@
 Financial analysts want to understand how a company is performing ESG(Environmental, Social, and Governance)-wise to help determine its potentials risks and opportunities.
 
 ## Goal
-An evaluation of certain ESG metrics based on a company's annualy published ESG report using AI/Machine Learning LLM.
+Provide an evaluation of certain ESG metrics based on a company's annualy published ESG report using AI/Machine Learning LLM.
 
-### Input
-Pdf file containing company ESG report.
-
-### Output
-Text (evaluation).
+## Parameters
+- **Input:** Pdf file containing company ESG report.
+- **Output:** Text (evaluation).
 
 # App Setup
 
