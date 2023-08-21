@@ -36,7 +36,7 @@ def get_reader_with_report(company_name):
 	return PdfReader(get_report_file_path(company_name))
 
 
-def get_report_pages(company_name='microsoft'): #Company name hardcoded during dev.
+def get_report_pages(company_name):
 	"""
 	Returns list containing each page in report 
 	by given company name.
@@ -47,7 +47,16 @@ def get_report_pages(company_name='microsoft'): #Company name hardcoded during d
 	for page in unparsed_pages:
 		pages.append(page.extract_text())
 
-	return pages
+	return pages # Note: each page contains markdown such as '\n'. Remove those if LLM has issues with it.
+
+
+def get_report_as_single_string(company_name='microsoft'): #Company name hardcoded during dev.
+	"""
+	Returns report by given company name 
+	as one single string.
+	"""
+	return ' '.join(map(str, get_report_pages(company_name)))
+
 
 
 
