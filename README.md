@@ -26,3 +26,11 @@ so you might want to `docker prune` after having run it a couple of times.
 *Note: I recommend this setup to ensure that none of your current local dependencies
 gets changed/updated inadvertently. A docker container ensures isolation and makes it easy to 
 deploy apps regardless of the current machine's setup.*
+
+
+## Run Tests
+To run the testsuite, first run the app in the container as explained above,
+then run the following in the terminal inside the container:
+```
+pytest
+```
