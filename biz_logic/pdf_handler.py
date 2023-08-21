@@ -14,6 +14,11 @@ def get_report_file_path(company_name):
 	"""
 	Returns report file path 
 	by given company name.
+
+	Parameters:
+		company_name (str): company name
+	Returns:
+		file_path (str): file path
 	"""
 	if company_name.upper() in dir(Company):
 		file_path = Company[company_name.upper()].value
@@ -27,6 +32,11 @@ def get_reader_with_report(company_name):
 	"""
 	Returns reader containing report by 
 	given company name.
+
+	Parameters:
+		company_name (str): company name
+	Returns:
+		pdfreader instance containing report
 	"""
 	return PdfReader(get_report_file_path(company_name))
 
@@ -74,12 +84,3 @@ def get_report_as_single_string(company_name):
 		string representing entire report
 	"""
 	return ' '.join(map(str, get_report_pages(company_name)))
-
-
-
-
-
-
-
-
-
