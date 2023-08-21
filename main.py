@@ -1,4 +1,4 @@
-from pdf_handler import test
+from biz_logic.pdf_handler import test
 
 def main():
     print("Hello World!")
