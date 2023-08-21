@@ -26,3 +26,31 @@ def get_report_file_path(company_name):
 		file_path = None 
 
 	return file_path
+
+
+def get_reader_with_report(company_name):
+	"""
+	Returns reader containing report by 
+	given company name.
+	"""
+	return PdfReader(get_report_file_path(company_name))
+
+
+def get_report_pages(company_name='microsoft'): #Company name hardcoded during dev.
+	"""
+	Returns list containing each page in report 
+	by given company name.
+	"""
+	unparsed_pages = get_reader_with_report(company_name).pages
+	pages = []
+
+	for page in unparsed_pages:
+		pages.append(page.extract_text())
+
+	return pages
+
+
+
+
+
+
