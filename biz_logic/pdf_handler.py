@@ -45,12 +45,20 @@ def get_report_pages(company_name):
 	return pages # Note: each page contains markdown such as '\n'. Remove those if LLM has issues with it.
 
 
+def remove_line_breaks_from_page(page):
+	"""
+	Return page without line breaks
+	"""
+	return None
+
 def get_report_as_single_string(company_name):
 	"""
 	Returns report by given company name 
 	as one single string.
 	"""
 	return ' '.join(map(str, get_report_pages(company_name)))
+
+
 
 
 
