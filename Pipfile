@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 pypdf = "==3.15.2"
+pytest = "==7.4.0"
 
 [dev-packages]
 
