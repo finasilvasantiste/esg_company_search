@@ -1,8 +1,9 @@
-from biz_logic.pdf_handler import test
+from biz_logic.pdf_handler import get_report_as_single_string
 
 def main():
     print("Hello World!")
 
 if __name__ == "__main__":
-    # main()
-    test()
+    company_name = 'airbnb' # Company name hardcoded during dev.
+    report = get_report_as_single_string(company_name)
+    
