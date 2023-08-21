@@ -1,18 +1,13 @@
 from pypdf import PdfReader
 from enum import Enum
 
-class Company(Enum):
+class Company(Enum): # TODO: replace this with pdf upload option.
+	""" 
+	Represents a company and 
+	the file path to its report.
+	"""
 	MICROSOFT = "esg_reports/microsoft_2022.pdf"
 	AIRBNB = "esg_reports/airbnb_2021.pdf"
-
-def test():
-	reader = PdfReader("esg_reports/microsoft_2022.pdf")
-	number_of_pages = len(reader.pages)
-	page = reader.pages[0]
-	text = page.extract_text()
-
-	print(number_of_pages)
-	print(text)
 
 
 def get_report_file_path(company_name):
@@ -50,7 +45,7 @@ def get_report_pages(company_name):
 	return pages # Note: each page contains markdown such as '\n'. Remove those if LLM has issues with it.
 
 
-def get_report_as_single_string(company_name='microsoft'): #Company name hardcoded during dev.
+def get_report_as_single_string(company_name='microsoft'): # Company name hardcoded during dev.
 	"""
 	Returns report by given company name 
 	as one single string.
