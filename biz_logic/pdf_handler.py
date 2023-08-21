@@ -35,26 +35,43 @@ def get_report_pages(company_name):
 	"""
 	Returns list containing each page in report 
 	by given company name.
+
+	Parameters:
+		company_name (str): company name
+	Returns:
+		pages (lst): list containing strings representing pages
 	"""
 	unparsed_pages = get_reader_with_report(company_name).pages
 	pages = []
 
-	for page in unparsed_pages:
-		pages.append(page.extract_text())
+	for unparsed_page in unparsed_pages:
+		page = remove_line_breaks_from_page(unparsed_page.extract_text())
+		pages.append(page)
 
-	return pages # Note: each page contains markdown such as '\n'. Remove those if LLM has issues with it.
+	return pages
 
 
 def remove_line_breaks_from_page(page):
 	"""
-	Return page without line breaks
+	Return page without line break symbols.
+
+	Parameters:
+		page (str): page content as a string
+	Returns:
+		string representing page content without line break symbols
 	"""
-	return None
+	return ' '.join(page.splitlines())
+
 
 def get_report_as_single_string(company_name):
 	"""
 	Returns report by given company name 
 	as one single string.
+
+	Parameters:
+		company_name (str): company name
+	Returns:
+		string representing entire report
 	"""
 	return ' '.join(map(str, get_report_pages(company_name)))
 
