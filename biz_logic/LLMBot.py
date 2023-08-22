@@ -15,7 +15,8 @@ class LLMBot():
 	def ask_questions(self, company_name, report):
 		context = report
 		metric = Metric.CARBON_FOOTPRINT.value
-		question = "What is {} doing about {}? Use the context provided. Use quotation marks whenever you are quoting from the context.".format(company_name, metric)
+		question = ("What is {} doing about {}? Use the context provided." +
+		" Use quotation marks whenever you are quoting from the context.").format(company_name, metric)
 
 		response = openai.Completion.create(
 		  engine=self.engine,
