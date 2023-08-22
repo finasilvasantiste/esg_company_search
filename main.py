@@ -7,11 +7,9 @@ def main():
     report = get_report_as_single_string(company_name)
     first_report_half = report[0:4000] # 4,097 token max for LLM engine
 
-    bot = LLMBot()
-    # bot.ask_questions(company_name, report[0:4000]) # 4,097 token max for this engine
-    bot.ask_question(company_name = company_name, 
-        report = first_report_half, 
-        esg_metric = ESGMetric.CARBON_FOOTPRINT.value)
+    bot = LLMBot(company = company_name, report = first_report_half)
+    bot.ask_question(esg_metric = ESGMetric.CARBON_FOOTPRINT.value)
+    bot.ask_question(esg_metric = ESGMetric.DIVERSITY_AND_INCLUSION.value)
     
 
 if __name__ == "__main__":

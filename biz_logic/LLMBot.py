@@ -1,6 +1,5 @@
 import openai
 import configparser
-# from biz_logic.ESGMetric import ESGMetric
 
 
 class LLMBot():
@@ -8,14 +7,15 @@ class LLMBot():
 	config.read_file((open(r'keys.cfg')))
 	openai.api_key = config.get('OPENAI', 'ACCESS_KEY_ID')		
 	
-	def __init__(self):
+	def __init__(self, company, report):
+		self.company = company,
+		self.report = report,
 		self.engine = 'text-davinci-003'	
 
-	def ask_question(self, company_name, report, esg_metric):
-		context = report
-		# metric = ESGMetric.CARBON_FOOTPRINT.value
+	def ask_question(self, esg_metric):
+		context = self.report
 		question = ("What is {} doing about {}? Use the context provided." +
-		" Use quotation marks whenever you are quoting from the context.").format(company_name, esg_metric)
+		" Use quotation marks whenever you are quoting from the context.").format(self.company, esg_metric)
 
 		response = openai.Completion.create(
 		  engine=self.engine,
@@ -24,5 +24,6 @@ class LLMBot():
 		)
 
 		answer = response.choices[0].text.strip()
-		print(answer)	
+		print('Question topic: \n {} \n'.format(esg_metric))
+		print('Answer: \n {} \n\n'.format(answer))	
 
