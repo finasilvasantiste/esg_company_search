@@ -3,6 +3,11 @@ import configparser
 
 
 class LLMBot():
+	"""
+	Represents a LLM (Large Language Model) Bot.
+	It can answer questions about given topics relating 
+	to a given report (max size 4,097 tokens).
+	"""
 	config = configparser.ConfigParser()
 	config.read_file((open(r'keys.cfg')))
 	openai.api_key = config.get('OPENAI', 'ACCESS_KEY_ID')		
@@ -10,20 +15,24 @@ class LLMBot():
 	def __init__(self, company, report):
 		self.company = company,
 		self.report = report,
-		self.engine = 'text-davinci-003'	
+		self.engine = 'text-davinci-003' # 4,097 token max for this engine
 
-	def ask_question(self, esg_metric):
-		context = self.report
-		question = ("What is {} doing about {}? Use the context provided." +
-		" Use quotation marks whenever you are quoting from the context.").format(self.company, esg_metric)
+	def ask_question(self, topic):
+		""" 
+		Submits question about given topic to LLM.
+		Prints out topic and its answer.
+		"""
+		question = ("What is {company} doing about {topic}? The context provided is {company}'s factsheet. " + 
+			"Use the factsheet to answer the question. Use quotation marks whenever " + 
+			"you are quoting from the factsheet.").format(company = self.company, topic = topic)
 
 		response = openai.Completion.create(
 		  engine=self.engine,
-		  prompt=f"Question answering:\nContext: {context}\nQuestion: {question}",
-		  max_tokens=300
+		  prompt=f"Question answering:\nContext: {self.report}\nQuestion: {question}",
+		  max_tokens=400
 		)
 
 		answer = response.choices[0].text.strip()
-		print('Question topic: \n {} \n'.format(esg_metric))
+		print('Question topic: \n {} \n'.format(topic))
 		print('Answer: \n {} \n\n'.format(answer))	
 
