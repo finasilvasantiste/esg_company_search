@@ -9,7 +9,9 @@ def main():
 
     bot = LLMBot(company = company_name, report = first_report_half)
     bot.ask_question(topic = ESGMetric.CARBON_FOOTPRINT.value)
+    bot.ask_question(topic = ESGMetric.WATER_USAGE.value)
     bot.ask_question(topic = ESGMetric.DIVERSITY_AND_INCLUSION.value)
+    bot.ask_question(topic = ESGMetric.EXECUTIVE_COMPENSATION.value)
     
 
 if __name__ == "__main__":
