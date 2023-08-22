@@ -58,13 +58,14 @@ gets changed/updated inadvertently. A docker container ensures isolation and mak
 deploy apps regardless of the current machine's setup.*
 
 ## Run App
-To run the application run the following in the terminal inside the container:
+To run the application, first run the app in the container as explained above, 
+then run the following in the terminal inside the container:
 ```
 python main.py
 ```
 
 ## Run Tests
-To run the testsuite first run the app in the container as explained above,
+To run the testsuite, first run the app in the container as explained above,
 then run the following in the terminal inside the container:
 ```
 pytest
