@@ -38,8 +38,14 @@ Provide an evaluation of certain ESG metrics based on a company's annualy publis
 
 # App Setup
 
+## Requirements
+- Latest [Docker](https://www.docker.com/) version (this app uses `Docker version 24.0.5`).
+- An [OpenAI](https://platform.openai.com/) account with some balance on it to be able to use their LLM.
+
+***That's it.*** The rest of the setup is being taken care of by the Docker container/image.
+
+
 ## Docker Setup *(recommended)*
-Make sure you have [Docker](https://www.docker.com/) installed.
 Run the following command in a terminal to build and run a new container:
 ```
 bash scripts/run_app_in_docker.sh
