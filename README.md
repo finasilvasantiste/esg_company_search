@@ -57,6 +57,11 @@ so you might want to `docker prune` after having run it a couple of times.
 gets changed/updated inadvertently. A docker container ensures isolation and makes it easy to 
 deploy apps regardless of the current machine's setup.*
 
+## Run App
+To run the application run the following in the terminal inside the container:
+```
+python main.py
+```
 
 ## Run Tests
 To run the testsuite, first run the app in the container as explained above,
