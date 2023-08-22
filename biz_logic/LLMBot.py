@@ -1,6 +1,6 @@
 import openai
 import configparser
-from biz_logic.esg_handler import Metric
+# from biz_logic.ESGMetric import ESGMetric
 
 
 class LLMBot():
@@ -11,12 +11,11 @@ class LLMBot():
 	def __init__(self):
 		self.engine = 'text-davinci-003'	
 
-
-	def ask_questions(self, company_name, report):
+	def ask_question(self, company_name, report, esg_metric):
 		context = report
-		metric = Metric.CARBON_FOOTPRINT.value
+		# metric = ESGMetric.CARBON_FOOTPRINT.value
 		question = ("What is {} doing about {}? Use the context provided." +
-		" Use quotation marks whenever you are quoting from the context.").format(company_name, metric)
+		" Use quotation marks whenever you are quoting from the context.").format(company_name, esg_metric)
 
 		response = openai.Completion.create(
 		  engine=self.engine,
