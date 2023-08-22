@@ -1,12 +1,18 @@
 # ESG Company Search
 
+# Index
+- [TLDR](#tldr)
+- [Writeup](#writeup)
+- [How it works](#how-it-works)
+- [App Setup](#app-setup)
+
 # TL;DR
 The app is a POC: it uses a LLM (openai api) to answer given questions to a given text.
 Currently, the questions to ask and the text to use as context are hardcoded. 
 At this stage, I'd connect with stakeholders to understand if this meets their needs,
 which improvements to make and functionality to add. 
 
-# Summary
+# Writeup
 
 ## Scenario/Use Case
 Financial analysts want to understand how a company is performing ESG(Environmental, Social, and Governance)-wise to help determine its potentials risks and opportunities.
@@ -14,33 +20,21 @@ Financial analysts want to understand how a company is performing ESG(Environmen
 ## Goal
 Provide an evaluation of certain ESG metrics based on a company's annualy published ESG report using AI/Machine Learning LLM.
 
-## Parameters
-- **Input:** Pdf file containing company ESG report.
-- **Output:** Text (evaluation).
-
 # How it works
 
 ## Parameters
 - **Input:** Pdf file containing company ESG report uploaded in folder.
 - **Output:** Text (question topic and LLM's answer) printed out in console.
 
-# Examples
-- **Input:** Airbnb's 2021 ESG report (https://s26.q4cdn.com/656283129/files/doc_downloads/governance_doc_updated/Airbnb-ESG-Factsheet-(Final).pdf).
+## Examples
+- **Input:** [Airbnb's 2021 ESG report](https://s26.q4cdn.com/656283129/files/doc_downloads/governance_doc_updated/Airbnb-ESG-Factsheet-(Final).pdf).
 - **Output:**
-```
-Question topic: 
- Diversity and Inclusion 
+  
+| Question Topic        | LLM's Answer |
+| ------------- |:-------------:| 
+| Diversity and Inclusion     | Airbnb is "deeply committed to making Airbnb a place where people of all backgrounds, identities, and experiences can succeed and thrive." They have "established a Diversity Council comprising senior leaders" to further embed their plans into their organizations, as well as offer "training on allyship, unconscious bias, and disability inclusion" for all employees. They also have implemented policies such as "requiring women and underrepresented minorities in the US to be presented on candidate slates when we hire for open roles," as well as "increasing our investment in professional development, mentorship, and sponsorship for women and underrepresented minorities." Airbnb is also supporting "19 employee resource groups (ERGs)" to foster a sense of belonging at work.      |
+| Executive Compensation     | In the factsheet, Airbnb mentioned their commitment to "supporting our employees" which includes a principle of "pay equity". They describe taking "deliberate actions to make our recruiting, promotion, and retention practices more inclusive" and investing in "mentorship, and sponsorship for women and underrepresented minorities", and they offer "leadership development courses for members of our employee resource groups". Although the factsheet does not provide details on executive compensation specifically, it is clear that Airbnb is dedicated to promoting diversity and gender and racial equality in their salary policies.  |
 
-Answer: 
- Answer: Airbnb is "deeply committed to making Airbnb a place where people of all backgrounds, identities, and experiences can succeed and thrive." They have "established a Diversity Council comprising senior leaders" to further embed their plans into their organizations, as well as offer "training on allyship, unconscious bias, and disability inclusion" for all employees. They also have implemented policies such as "requiring women and underrepresented minorities in the US to be presented on candidate slates when we hire for open roles," as well as "increasing our investment in professional development, mentorship, and sponsorship for women and underrepresented minorities." Airbnb is also supporting "19 employee resource groups (ERGs)" to foster a sense of belonging at work. 
-
-
-Question topic: 
- Executive Compensation 
-
-Answer: 
- In the factsheet, Airbnb mentioned their commitment to "supporting our employees" which includes a principle of "pay equity". They describe taking "deliberate actions to make our recruiting, promotion, and retention practices more inclusive" and investing in "mentorship, and sponsorship for women and underrepresented minorities", and they offer "leadership development courses for members of our employee resource groups". Although the factsheet does not provide details on executive compensation specifically, it is clear that Airbnb is dedicated to promoting diversity and gender and racial equality in their salary policies. 
-```
 
 # App Setup
 
