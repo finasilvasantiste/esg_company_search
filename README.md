@@ -7,8 +7,7 @@
 - [App Setup](#app-setup)
 
 # TL;DR
-The app is a POC: it uses a LLM (openai api) to answer given questions to a given text.
-Currently, the questions to ask and the text to use as context are hardcoded. The input are pdf files with company anual sustainability reports and the output are answers to a handful of ESG metrics.
+Proof-of-concept: this app uses a LLM (openai api) to answer given questions to a given text. The input are pdf files with company annual sustainability reports and the output are answers to a handful of ESG metrics. Currently, the questions to ask and the text to use as context are hardcoded. 
 At this stage, I'd connect with stakeholders to understand if this meets their needs,
 which improvements to make and functionality to add. 
 
