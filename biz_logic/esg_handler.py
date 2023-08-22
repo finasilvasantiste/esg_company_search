@@ -1,6 +1,6 @@
 from enum import Enum
 
-class METRIC(Enum): 
+class Metric(Enum): 
 	""" 
 	Represents an ESG metric.
 	"""

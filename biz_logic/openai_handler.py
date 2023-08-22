@@ -1,5 +1,6 @@
 import openai
 import configparser
+from biz_logic.esg_handler import Metric
 
 config = configparser.ConfigParser()
 config.read_file((open(r'keys.cfg')))
@@ -22,3 +23,18 @@ def question_example():
 
 	answer = response.choices[0].text.strip()
 	print(answer)
+
+
+def ask_esg_questions(company_name, esg_report):
+	context = esg_report
+	metric = Metric.CARBON_FOOTPRINT.value
+	question = "What is {} doing about {}?".format(company_name, metric)
+	
+	response = openai.Completion.create(
+	  engine="text-davinci-003",
+	  prompt=f"Question answering:\nContext: {context}\nQuestion: {question}",
+	  max_tokens=200
+	)
+
+	answer = response.choices[0].text.strip()
+	print(answer)	

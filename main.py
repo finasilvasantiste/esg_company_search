@@ -1,5 +1,5 @@
 from biz_logic.pdf_handler import get_report_as_single_string
-from biz_logic.openai_handler import test, question_example
+from biz_logic.openai_handler import test, question_example, ask_esg_questions
 
 def main():
     print("Hello World!")
@@ -11,4 +11,5 @@ if __name__ == "__main__":
     # print(report)
 
     # test()
-    question_example()
+    # question_example()
+    ask_esg_questions(company_name, report)
