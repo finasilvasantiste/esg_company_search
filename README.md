@@ -54,7 +54,7 @@ so you might want to `docker prune` after having run it a couple of times.
 
 *Note: I recommend this setup to ensure that none of your current local dependencies
 gets changed/updated inadvertently. A docker container ensures isolation and makes it easy to 
-deploy apps regardless of the current machine's setup.*
+deploy apps regardless of the current machine's setup. (That also makes it easier to deploy on the cloud.)*
 
 ## Run App
 To run the application, first run the app in the container as explained above, 
