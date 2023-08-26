@@ -21,6 +21,11 @@ class LLMBot():
 		""" 
 		Submits question about given topic to LLM.
 		Prints out topic and its answer.
+
+		Parameters:
+			topic (str): question topic
+		Returns:
+			None
 		"""
 		question = ("What is {company} doing about {topic}? The context provided is {company}'s factsheet. " + 
 			"Use the factsheet to answer the question. Use quotation marks whenever " + 
