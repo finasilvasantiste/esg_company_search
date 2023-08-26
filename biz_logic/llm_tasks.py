@@ -14,7 +14,7 @@ def llm_ask_esg_questions(company, report):
 		None
 	"""
 	first_report_half = report[0:4000] # 4,097 token max for LLM engine
-    bot = LLMBot(company = company_name, report = first_report_half)
+	# bot = LLMBot(company = company_name, report = first_report_half)
 
     # Commenting out the api calls to openai during dev.
     # bot.ask_question(topic = ESGMetric.CARBON_FOOTPRINT.value)
