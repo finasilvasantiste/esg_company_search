@@ -1,8 +1,7 @@
 from prefect import flow
-from biz_logic.pdf_handler import get_report_as_single_string
 from biz_logic.LLMBot import LLMBot
 from biz_logic.ESGMetric import ESGMetric
-
+from biz_logic.pdf_tasks import get_report_as_single_string
 
 @flow
 def esg_company_search(company_name):

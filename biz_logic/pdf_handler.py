@@ -64,15 +64,3 @@ def remove_line_breaks_from_page(page):
 	"""
 	return ' '.join(page.splitlines())
 
-
-def get_report_as_single_string(company_name):
-	"""
-	Returns report by given company name 
-	as one single string.
-
-	Parameters:
-		company_name (str): company name
-	Returns:
-		string representing entire report
-	"""
-	return ' '.join(map(str, get_report_pages(company_name)))
