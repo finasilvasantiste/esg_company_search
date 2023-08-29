@@ -19,7 +19,7 @@ def llm_ask_esg_questions(company, report):
 
 	# print('ABOUT TO ASK QUESTION')
 	# Commenting out the api calls to openai during dev.
-	bot.ask_question(topic = ESGMetric.CARBON_FOOTPRINT.value)
+	# bot.ask_question(topic = ESGMetric.CARBON_FOOTPRINT.value)
     # bot.ask_question(topic = ESGMetric.WATER_USAGE.value)
     # bot.ask_question(topic = ESGMetric.DIVERSITY_AND_INCLUSION.value)
     # bot.ask_question(topic = ESGMetric.EXECUTIVE_COMPENSATION.value)
