@@ -14,7 +14,3 @@ def esg_company_search(company_name):
     """
     report = get_report_as_single_string(company_name)
     llm_ask_esg_questions(company = company_name, report = report)
-    
-
-if __name__ == "__main__":
-    esg_company_search('airbnb')
