@@ -43,14 +43,14 @@ class LLMBot():
 
 	@staticmethod
 	def cut_string_to_max_token_size(string_to_cut):
-	"""
-	Cuts given string to max token size of LLM.
-	4,097 token max for LLM engine currently used.
+		"""
+		Cuts given string to max token size of LLM.
+		4,097 token max for LLM engine currently used.
 
-	Parameters:
-		string_to_cut (str): string to cut
-	Returns:
-		string cut to 4,097 tokens
-	"""
+		Parameters:
+			string_to_cut (str): string to cut
+		Returns:
+			string cut to 4,097 tokens
+		"""
 
-	return string_to_cut[0:4097]
+		return string_to_cut[0:4097]
