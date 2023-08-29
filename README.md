@@ -36,8 +36,7 @@ Provide an evaluation of certain ESG metrics based on a company's annualy publis
 
 
 ## Note on technology used
-The business logic is wrapped in a lightweight [**data workflow orchestration tool**](https://www.prefect.io/opensource) to more easily provide observabililty, scheduling, deployment on the cloud, etc. To deploy the app on the cloud you need a server running an instance of the Prefect dashboard (or alternatively use an instance hosted by Prefect themselves, which they call Prefect Cloud) and if using AWS, an AWS ECS Task definition. The ECS task then uses the `docker-compose.yml` and `Dockerfile` files included in this repo to run the application 
-in a container on AWS.
+The business logic is wrapped in a lightweight **data workflow orchestration tool** [(Prefect)](https://www.prefect.io/opensource) to more easily provide observabililty, scheduling, deployment on the cloud, etc. To deploy the app on the cloud you need a server running an instance of the Prefect dashboard (or alternatively use an instance hosted by Prefect themselves, which they call Prefect Cloud) and some AWS infra (or any other cloud provider supported by Prefect). The Prefect api can use the `docker-compose.yml` file to create an image that gets pushed into an AWS ECS repo, and using an ECS task definition that image can then be run in an ECS container. Once the workflow ran the ECS container gets shut down and the AWS resources released.
 
 
 # App Setup
