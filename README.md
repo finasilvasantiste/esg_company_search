@@ -35,6 +35,10 @@ Provide an evaluation of certain ESG metrics based on a company's annualy publis
 | Executive Compensation     | In the factsheet, Airbnb mentioned their commitment to "supporting our employees" which includes a principle of "pay equity". They describe taking "deliberate actions to make our recruiting, promotion, and retention practices more inclusive" and investing in "mentorship, and sponsorship for women and underrepresented minorities", and they offer "leadership development courses for members of our employee resource groups". Although the factsheet does not provide details on executive compensation specifically, it is clear that Airbnb is dedicated to promoting diversity and gender and racial equality in their salary policies.  |
 
 
+## Note on technology used
+The business logic is wrapped in a lightweight [**data workflow orchestration tool**](https://www.prefect.io/opensource) to more easily provide observabililty, scheduling, deployment on the cloud, etc. To deploy the app on the cloud you need a server running an instance of the Prefect dashboard (or alternatively use an instance hosted by Prefect themselves, which they call Prefect Cloud) and if using AWS, an AWS ECS Task definition.
+
+
 # App Setup
 
 ## Requirements
