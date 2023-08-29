@@ -64,3 +64,4 @@ def remove_line_breaks_from_page(page):
 	"""
 	return ' '.join(page.splitlines())
 
+
