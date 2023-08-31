@@ -16,6 +16,7 @@ class LLMBot():
 		self.company = company,
 		self.report = report,
 		self.engine = 'text-davinci-003' # 4,097 token max for this engine
+		# TODO: add engine to init, in order to be able to choose between engines. Harcoded engine for now.
 
 	def ask_question(self, topic):
 		""" 
