@@ -7,7 +7,7 @@ name = "pypi"
 pypdf = "==3.15.2"
 pytest = "==7.4.0"
 openai = "*"
-prefect = "==2.11.5"
+prefect = "==2.12.0"
 
 [dev-packages]
 
